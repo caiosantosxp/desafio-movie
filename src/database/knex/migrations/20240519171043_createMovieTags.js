@@ -3,7 +3,7 @@ exports.up = knex => knex.schema.createTable('tags', table => {
   table.text('name');
 
   table.integer('user_id').references('id').inTable('users');
-  table.integer('moveis_id').references('id').inTable('movies');
+  table.integer('moveis_id').references('id').inTable('movies').onDelete('CASCADE');
 
 });
 
